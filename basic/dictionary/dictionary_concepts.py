@@ -1,6 +1,19 @@
 
 
 """
+A dictionary is a collection which is unordered, changeable and indexed.
+In Python dictionaries are written with curly brackets, and they have keys and values.
+
+thisdict = { "brand": "Ford", "model": "Mustang","year": 1964 }
+print(thisdict)
+
+Properties :
+- Keys are unique in nature
+
+"""
+
+
+"""
 Method	Description
 clear()	Removes all the elements from the dictionary
 copy()	Returns a copy of the dictionary
