@@ -41,3 +41,12 @@ sort()	    Sorts the list
 """
 
 
+
+#Nested List
+n_list = ["Happy", [2, 0, 1, 5]]
+print(n_list[0][1])
+
+my_list = [1, 3, 5, 9, 7, 5]
+print(my_list[:])
+my_list.pop(1)
+print(my_list)
