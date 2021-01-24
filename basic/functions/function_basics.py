@@ -36,10 +36,14 @@ Here is an example use of filter() function to filter out only even numbers from
 
 """
 complete_list = [1,2,3,4,5,6,7,8,9]
-even_list = list(filter(lambda x:(x % 2 ==0),complete_list))
+even_list = list(filter(lambda x:(x % 2),complete_list))
 print(even_list)
 
 
+
+complete_list = [1,2,3,4,5,6,7,8,9]
+lambda_list = list((lambda x:(x % 2),complete_list))
+print(lambda_list)
 
 
 
