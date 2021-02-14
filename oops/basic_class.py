@@ -4,6 +4,8 @@ class student:
     def __init__(self, name, age, rollno):
         self.name = name  # Instance Variable
         self.age = age
+
+
         self.rollno = rollno
 
     # __str__ and __repr__ method in python
