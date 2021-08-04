@@ -26,15 +26,11 @@ def bubble_sort(arr):
     l = len(arr)
     for i in range(l):
         for j in range(i+1,l):
-            print(arr[i],arr[j])
             if arr[i] > arr[j]:
                 arr[i],arr[j] = arr[j],arr[i]
 
 
     return arr
-
-
-
 
 
 

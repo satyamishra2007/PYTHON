@@ -42,3 +42,8 @@ def mergeSort(arr):
             arr[k] = R[j]
             j += 1
             k += 1
+
+    return arr
+
+lst = [4,7,5,3,9,1,2]
+print(mergeSort(lst))

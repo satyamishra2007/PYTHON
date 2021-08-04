@@ -1,50 +1,33 @@
-# BINARY SEARCH TREE
-
-"""
--- Works on sorted array
-
-Time complexity : O(N)
-Space Complexity :  O(1)
-
-"""
+# Binary Search in python
 
 
-#
-# def binary_search(item_list, item):
-#     first = 0
-#     last = len(item_list) - 1
-#     found = False
-#     while (first <= last and not found):
-#         mid = (first + last) // 2
-#         if item_list[mid] == item:
-#             found = True
-#         else:
-#             if item < item_list[mid]:
-#                 last = mid - 1
-#             else:
-#                 first = mid + 1
-#     return found
+def binarySearch(array, x):
 
-
-
-
-def binary_search(arr ,num):
     low = 0
-    high = len(arr) - 1
-    mid = 0
-    while (low <= high):
+    high = len(array)-1
+
+    while low <= high:
+
         mid = (low + high)//2
-        if arr[mid] < num :
-            low = mid + 1
-        elif arr[mid] > num:
-            high = mid -1
-        else:
+
+        if array[mid] == x:
             return mid
+
+        elif array[mid] < x:
+            low = mid + 1
+
+        else:
+            high = mid - 1
+
     return -1
 
 
+array = [3, 4, 5, 6, 7, 8, 9]
+x = 4
 
+result = binarySearch(array, x)
 
-print(binary_search([1, 2, 3, 5, 8], 6))
-print(binary_search([1, 2, 3, 5, 8], 5))
-
+if result != -1:
+    print("Element is present at index " + str(result))
+else:
+    print("Not found")
