@@ -1,13 +1,13 @@
 from datetime import datetime,date,timedelta
 
 today_ts = datetime.today()
-print(today_ts)
+print(f'today_ts : {today_ts}')
 
 now = datetime.now()
-print(now)
+print(f'now : {now}')
 
 today = date.today()
-print(today)
+print(f'today :{today}')
 
 print(now - timedelta(days= 5))
 print(now - timedelta(days= 5,hours= 5))

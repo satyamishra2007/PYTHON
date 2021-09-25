@@ -6,6 +6,6 @@ def all_possible_substring(str):
 
     return res
 
-print(all_possible_substring("satya"))
+print(all_possible_substring("geeksforgeeks"))
 
 

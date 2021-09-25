@@ -6,9 +6,6 @@ right  --> Holds larger value than it's root
 
 """
 
-
-
-
 class BinarySearchTree:
 
     def __init__(self, val=None, left=None, right=None):
@@ -109,13 +106,6 @@ class BinarySearchTree:
 
         return sum
     #def delete_node(self,data):
-
-
-
-
-
-
-
 
 
 # lst = [1,12,13,5,7,8,10]

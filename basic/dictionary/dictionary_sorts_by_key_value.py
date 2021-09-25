@@ -5,23 +5,6 @@ count_map = {}
 
 population = {"china":100 ,"india":95,"europe":90,"usa":80, "aus": 70}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def MaxPopulation(map):
     max_cntry =  max(map,key=map.get)
     return max_cntry
