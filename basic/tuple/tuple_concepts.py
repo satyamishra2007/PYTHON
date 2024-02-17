@@ -18,3 +18,10 @@ index()	Searches the tuple for a specified value and returns the position of whe
 Test Yourself With Exercises
 
 """
+
+t = (10, 20, 30, 40)
+
+print(t.count(10))
+
+
+print(t[0])

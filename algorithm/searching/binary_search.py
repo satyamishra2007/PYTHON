@@ -6,7 +6,7 @@ def binarySearch(array, x):
     low = 0
     high = len(array)-1
 
-    while low <= high:
+    while low < high:
 
         mid = (low + high)//2
 
