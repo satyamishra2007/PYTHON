@@ -1,20 +1,27 @@
 """
-Binaary serach tree can have at max 2 child .(0 or 1 or 2). Its ordered and non duplicate(like set)
-
+Binary Search tree can have at max 2 child .(0 or 1 or 2). Its ordered and non duplicate(like set)
 left   --> Holds smaller value than it's root
 right  --> Holds larger value than it's root
 
 """
+"""
+A binary search tree (BST) is a binary tree data structure in which each node has at most two children 
+(referred to as the left child and the right child), and the keys in the left subtree are less than 
+the key in the root, while the keys in the right subtree are greater than the key in the root. 
+BSTs support efficient search, insertion, and deletion operations.
+
+"""
+
 
 class BinarySearchTree:
 
-    def __init__(self, val=None, left=None, right=None):
+    def __init__(self, val):
         self.val = val
-        self.left = left
-        self.right = right
+        self.left = None
+        self.right = None
 
-    def add_child(self,new_val):
-        new_node =  BinarySearchTree(new_val)
+    def add_child(self, new_val):
+        new_node = BinarySearchTree(new_val)
 
         if new_val == self.val:
             return
@@ -63,7 +70,7 @@ class BinarySearchTree:
         tree_lst.append(self.val)
         return tree_lst
 
-    def search(self,data):
+    def search(self, data):
         if data == self.val:
             return True
 
@@ -87,12 +94,12 @@ class BinarySearchTree:
         else:
             return self.right.find_max()
 
-
     def find_min(self):
         if self.left is None:
             return self.val
         else:
             return self.left.find_min()
+
     def sum(self):
         sum = 0
 
@@ -105,7 +112,7 @@ class BinarySearchTree:
         sum += self.val
 
         return sum
-    #def delete_node(self,data):
+    # def delete_node(self,data):
 
 
 # lst = [1,12,13,5,7,8,10]
@@ -116,15 +123,27 @@ class BinarySearchTree:
 root = BinarySearchTree(10)
 root.add_child(15)
 root.add_child(6)
-print("In   order Traversal:",root.inorder_traversal())
-print("Pre  order Traversal:",root.preorder_traversal())
-print("post order Traversal:",root.postorder_traversal())
+print("In   order Traversal:", root.inorder_traversal())
+print("Pre  order Traversal:", root.preorder_traversal())
+print("post order Traversal:", root.postorder_traversal())
 
 
+"""
+Search:
+
+Average case: O(log n)
+Worst case (unbalanced tree): O(n)
+Insertion:
+
+Average case: O(log n)
+Worst case (unbalanced tree): O(n)
+Deletion:
+
+Average case: O(log n)
+Worst case (unbalanced tree): O(n)
+Inorder Traversal (printing elements in sorted order):
+
+O(n)
 
 
-
-
-
-
-
+"""

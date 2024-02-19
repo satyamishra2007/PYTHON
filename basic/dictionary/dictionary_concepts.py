@@ -1,5 +1,3 @@
-
-
 """
 A dictionary is a collection which is unordered, changeable and indexed.
 In Python dictionaries are written with curly brackets, and they have keys and values.
@@ -12,7 +10,7 @@ Properties :
 
 """
 
-#https://www.programiz.com/python-programming/methods/dictionary/copy
+# https://www.programiz.com/python-programming/methods/dictionary/copy
 """
 Method	Description
 clear()	Removes all the elements from the dictionary
@@ -29,84 +27,109 @@ values()	Returns a list of all the values in the dictionary
 
 """
 
-#EMPTY Dictionary declaration
+# EMPTY Dictionary declaration
 my_dict = {}
 mydict = dict()
 
-print(my_dict,mydict)
+print(my_dict, mydict)
 
 
-#adding element
+"""
+1. clear()
+Removes all elements from the dictionary.
+"""
 
-my_dict[1] = "CA"
-my_dict[2] = "AZ"
-my_dict[3] = "OH"
-my_dict[4] = "FL"
-
-mydict  = {1:"CA",2:"AZ",3:"OH",4:"FL"}
-print(my_dict,"\n",mydict)
-
-
-#traveresing keys
-
-# for key in mydict.keys():
-#     print(key)
-#
-#
-# for val in mydict.values():
-#     print(val)
-
-for k,v in mydict.items():
-    print(k,v)
-
-print(mydict.get(1,"NO STATE"))
-print(mydict[1])
-# print(mydict.popitem())
-# print(mydict.pop(2))
-# print(mydict)
+my_dict = {'a': 1, 'b': 2}
+my_dict.clear()
+print(my_dict)  # Output: {}
 
 
+"""
+2. copy()
+Returns a shallow copy of the dictionary.
+
+"""
+
+my_dict = {'a': 1, 'b': 2}
+new_dict = my_dict.copy()
+print(new_dict)  # Output: {'a': 1, 'b': 2}
+
+"""
+3. fromkeys(seq[, value])
+Creates a new dictionary with keys from seq and values set to value.
+"""
+keys = ['a', 'b', 'c']
+value = 0
+new_dict = dict.fromkeys(keys, value)
+print(new_dict)  # Output: {'a': 0, 'b': 0, 'c': 0}
 
 
+"""
+4. get(key[, default])
+Returns the value for key if key is in the dictionary, else default
+"""
 
-##NESTED dictionaries
+my_dict = {'a': 1, 'b': 2}
+value = my_dict.get('a', 0)
+print(value)  # Output: 1
 
+"""
+5. items()
+Returns a new view of the dictionary's items (key-value pairs).
+"""
+my_dict = {'a': 1, 'b': 2}
+items = my_dict.items()
+print(items)  # Output: dict_items([('a', 1), ('b', 2)])
 
-people = {1:{'name':'john','age':12,'sex':'male'},
-          2:{'name':'marie','age':18,'sex':'female'}}
-print(people[1],people[2])
-print(people[1]['name'])
-print(people[1]['age'])
-print(people[1]['sex'])
+"""
+6. keys()
+Returns a new view of the dictionary's keys.
+"""
+my_dict = {'a': 1, 'b': 2}
+keys = my_dict.keys()
+print(keys)  # Output: dict_keys(['a', 'b'])
 
-people[3] = {'name':'robin','age':32,'sex':'male','married':'no'}
+"""
+7. pop(key[, default])
+Removes the specified key and returns its associated value. If key is not found, default is returned if given, otherwise a KeyError is raised.
+"""
 
-people[4] = {}
-people[4]['name'] = 'sat'
-people[4]['age'] = 30
-people[4]['sex'] = 'male'
-people[4]['married'] = 'yes'
-print(people)
+my_dict = {'a': 1, 'b': 2}
+value = my_dict.pop('a')
+print(value)  # Output: 1
 
+"""
+8. popitem()
+Removes and returns an arbitrary (key, value) pair from the dictionary.
+"""
+my_dict = {'a': 1, 'b': 2}
+item = my_dict.popitem()
+print(item)  # Output: ('b', 2)
 
-##Traversing nested distionary
+"""
+9. setdefault(key[, default])
+Returns the value for key if key is in the dictionary, else sets default as the value for key and returns default
+"""
 
-for p_key,p_val in people.items():
-    print("\nPerson ID :",p_key)
-    for k in p_val:
-        print(k + ":" ,p_val[k])
+my_dict = {'a': 1, 'b': 2}
+value = my_dict.setdefault('c', 0)
+print(value)  # Output: 0
 
-## Deleting elements
+"""
+10. update([other])
+Updates the dictionary with key-value pairs from other, overwriting existing keys if present.
+"""
 
-del people[3]
-del people[4]['married']
-people.pop(2)
-people.popitem()
-print(people)
+my_dict = {'a': 1, 'b': 2}
+other_dict = {'b': 3, 'c': 4}
+my_dict.update(other_dict)
+print(my_dict)  # Output: {'a': 1, 'b': 3, 'c': 4}
 
-#vowels keys
-keys = {'a', 'e', 'i', 'o', 'u' }
-value = 'vowel'
+"""
+11. values()
+Returns a new view of the dictionary's values.
+"""
 
-vowels = dict.fromkeys(keys, value)
-print(vowels)
+my_dict = {'a': 1, 'b': 2}
+values = my_dict.values()
+print(values)  # Output: dict_values([1, 2])

@@ -1,8 +1,4 @@
 """
-
-
-"""
-"""
 There are four collection data types in the Python programming language:
 
 List  --> is a collection which is ordered and changeable. Allows duplicate members.
@@ -13,59 +9,145 @@ When choosing a collection type, it is useful to understand the properties of th
 
 """
 
-
-
 """
 A list is a collection which is ordered and changeable. In Python lists are written with square brackets.
-thislist = ["apple", "banana", "cherry"]
-print(thislist)
+mylist = ["apple", "banana", "cherry"]
+print(mylist)
 
 """
-
 
 """
 LIST METHODS:
 
-list.append(x) : Add an item to the end of the list. Equivalent to a[len(a):] = [x].
+append(): Adds an element to the end of the list.
+extend(): Extends the list by appending elements from another list.
+insert(): Inserts an element at a specified index.
+remove(): Removes the first occurrence of a value.
+pop(): Removes and returns the element at a specified index.
+index(): Returns the index of the first occurrence of a value.
+count(): Returns the number of occurrences of a value.
+sort(): Sorts the list in ascending order.
+reverse(): Reverses the order of elements in the list.
+"""
 
-list.extend(iterable): Extend the list by appending all the items from the iterable. Equivalent to a[len(a):] = iterable.
+"""
+1. append(x)
+Time Complexity: O(1)
+Space Complexity: O(1)
+"""
+my_list = list([1, 2, 3])
+my_list.append(4)
+print(my_list)  # Output: [1, 2, 3, 4]
 
-list.insert(i, x) : Insert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).
+"""
+2. extend(iterable)
+Time Complexity: O(k)
+Space Complexity: O(k)
+"""
 
-list.remove(x) : Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
+my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
 
-list.pop([i]): Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)
+"""
+3. insert(i, x)
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+my_list = [1, 2, 3]
+my_list.insert(1, 5)
+print(my_list)  # Output: [1, 5, 2, 3]
 
-list.clear() :Remove all items from the list. Equivalent to del a[:].
+"""
+4. remove(x)
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+my_list = [1, 2, 3, 2]
+my_list.remove(2)
+print(my_list)  # Output: [1, 3, 2]
 
-list.index(x[, start[, end]]): Return zero-based index in the list of the first item whose value is equal to x. Raises a ValueError if there is no such item.
+"""
+5. pop([i])
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+my_list = [1, 2, 3]
+element = my_list.pop(1)
+print(element)  # Output: 2
+print(my_list)  # Output: [1, 3]
 
-The optional arguments start and end are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. 
-The returned index is computed relative to the beginning of the full sequence rather than the start argument.
+"""
+6. index(x[, start[, end]])
 
-list.count(x) :  Return the number of times x appears in the list.
+The index() method in Python returns the index of the first occurrence of a specified value in a list. It takes the following syntax:
 
-list.sort(*, key=None, reverse=False)
-Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).
+python
+Copy code
+list.index(value, start, stop)
+value: The value to search for in the list.
+start (optional): The index from where the search begins. Defaults to 0.
+stop (optional): The index where the search ends. Defaults to the end of the list.
 
-list.reverse() : Reverse the elements of the list in place.
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+my_list = [1, 2, 3, 2]
+index = my_list.index(2)
+print(index)  # Output: 1
 
-list.copy() : Return a shallow copy of the list. Equivalent to a[:].
+"""
+7. count(x)
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+
+my_list = [1, 2, 3, 2]
+count = my_list.count(2)
+print(count)  # Output: 2
+
+"""
+8. sort(key=None, reverse=False)
+Time Complexity: O(n log n)
+Space Complexity: O(log n) to O(n)
+"""
+
+my_list = [3, 1, 2]
+my_list.sort()
+print(my_list)  # Output: [1, 2, 3]
+
+my_list.sort(reverse=True)
+print(my_list)  # Output: [3,2,1]
+
+
+"""
+9. reverse()
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
+
+my_list = [1, 2, 3]
+my_list.reverse()
+print(my_list)  # Output: [3, 2, 1]
+
+"""
+10. copy()
+Time Complexity: O(n)
+Space Complexity: O(n)
+"""
+
+my_list = [1, 2, 3]
+new_list = my_list.copy()
+print(new_list)  # Output: [1, 2, 3]
+
+"""
+11. clear()
+
+Time Complexity: O(1)
+Space Complexity: O(1)
 
 """
 
-
-nums = [1, 2, 3, 4, 5, 6, 7]
-
-nums.append(8)
-print(nums)
-print(nums.index(4))
-
-print(f"Length of list is : {len(nums)}")
-nums.append(4)
-
-print(f"Number occurrence for 4 is: {nums.count(4)}")
-print(f"Number occurrence for 4 is: {nums.count(10)}")
-
-
-print(f"Index of 4 is: {nums.index(4)}")
+my_list = [1, 2, 3]
+my_list.clear()
+print(my_list)  # Output: []
